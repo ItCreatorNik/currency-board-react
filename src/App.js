@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Coins } from "./components/Coins";
+import { Navbar } from "./components/Navbar";
+import { selectCoinsState, selectIsCoinsLoading } from "./module/selectors";
+import { loadCoins } from "./module/thunks/load-coins";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export const App = () => {
+
+  const dispatch = useDispatch();
+  const coins = useSelector(selectCoinsState);
+  const isLoading = useSelector(selectIsCoinsLoading);
+
+  useEffect(() => {
+    dispatch(loadCoins());
+  }, []);
+
+  console.log(coins)
+
+  return isLoading ? (
+    <span>Loading...</span> ) : (
+    <>
+     <Navbar/>
+        <Coins coins={coins}/>
+    </>
   );
 }
 
-export default App;
