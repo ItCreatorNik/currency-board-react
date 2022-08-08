@@ -1,4 +1,4 @@
-import styles from "./Navbar.module.scss";
+import styles from "../styles/Navbar.module.scss";
 import {SiBitcoinsv} from "react-icons/si"
 
 export const Navbar = () => {

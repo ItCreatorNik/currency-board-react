@@ -1,4 +1,4 @@
-import styles from "./Coins.module.scss";
+import styles from "../styles/Coins.module.scss";
 
 export const CoinItem = (props) => {
   return (

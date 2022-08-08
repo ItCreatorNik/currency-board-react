@@ -1,5 +1,5 @@
 import { CoinItem } from "./CoinItem";
-import styles from"./Coins.module.scss";
+import styles from"../styles/Coins.module.scss";
 
 export const Coins = ({coins}) => {
 
