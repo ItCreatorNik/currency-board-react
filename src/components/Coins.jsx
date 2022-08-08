@@ -1,22 +1,22 @@
 import { CoinItem } from "./CoinItem";
-import "./Coins.css";
+import styles from"./Coins.module.scss";
 
 export const Coins = ({coins}) => {
 
     return (
-      <div className="container">
+      <div className={styles.container}>
         <div>
-          <div className="heading">
+          <div className={styles.heading}>
             <p>#</p>
-            <p className="coin-name">Coin</p>
+            <p className={styles.coinName}>Coin</p>
             <p>Price</p>
             <p>24h</p>
-            <p className="hide-mobile">Volume</p>
-            <p className="hide-mobile">Mkt Cap</p>
+            <p className={styles.hideMobile}>Volume</p>
+            <p className={styles.hideMobile}>Mkt Cap</p>
           </div>
 
-          {coins.map(coin => (
-            <CoinItem key={coin.id} coins={coin}/>
+          {coins.map((coin) => (
+            <CoinItem key={coin.id} coins={coin} />
           ))}
         </div>
       </div>

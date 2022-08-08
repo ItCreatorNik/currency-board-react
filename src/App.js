@@ -10,12 +10,12 @@ export const App = () => {
   const dispatch = useDispatch();
   const coins = useSelector(selectCoinsState);
   const isLoading = useSelector(selectIsCoinsLoading);
-
+ 
   useEffect(() => {
     dispatch(loadCoins());
-  }, []);
+  }, [dispatch]);
 
-  console.log(coins)
+  // console.log(coins)
 
   return isLoading ? (
     <span>Loading...</span> ) : (
